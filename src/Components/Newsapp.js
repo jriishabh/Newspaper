@@ -4,16 +4,24 @@ import Card from './Card';
 const Newsapp = () => {
     const [search, setSearch] = useState("");
     const [newsData, setNewsData] = useState(null);
-    const API_KEY = "9c3ed8ee95884dec979460a60f96675b";
+    const API_KEY = "b678e4d03bdb4779a994dc901b973d6a";
 
     const getData = async () => {
         if (!search.trim()) return;  // Avoid fetching if search is empty or just spaces
-
+    
         try {
-            const response = await fetch(`https://newsapi.org/v2/everything?q=${search}&apiKey=${API_KEY}`);
-            const jsonData = await response.json();
-            console.log(jsonData.articles);
+            console.log(`Fetching news for: ${search}`);  // Debugging: log the search term
             
+            const response = await fetch(`https://newsapi.org/v2/everything?q=${search}&apiKey=${API_KEY}`);
+    
+            // Check for HTTP status errors
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+    
+            const jsonData = await response.json();
+            console.log(jsonData);  // Log the full response to verify the structure
+    
             // Only update if jsonData.articles exists and has items
             if (jsonData.articles && jsonData.articles.length > 0) {
                 let dt = jsonData.articles.slice(0, 10); // Get the first 10 articles
@@ -22,10 +30,12 @@ const Newsapp = () => {
                 setNewsData([]); // Set an empty array if no articles found
             }
         } catch (error) {
+            // Log the error details
             console.error("Error fetching news:", error);
             setNewsData([]); // Handle errors by setting empty data
         }
     };
+    
 
     useEffect(() => {
         getData();
