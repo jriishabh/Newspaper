@@ -36,3 +36,233 @@
     transform: rotate(360deg);
   }
 }
+
+.tittle {
+  font-size: 3rem;
+  color: #333333;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  line-height: 1.2;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.8);
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+
+}
+
+
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.searchBar input {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.1rem;
+  color: #333333;
+  background-color: #f9f9f4;
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  width: 300px;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.searchBar input::placeholder {
+  color: #666666;
+  font-style: italic;
+}
+
+.searchBar button {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.1rem;
+  color: #333333;
+  background-color: #f1f1e8;
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  transition: background-color 0.3s ease;
+}
+
+.searchBar button:hover {
+  background-color: #e2e2d1;
+}
+
+.searchBar input:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .tittle {
+    font-size: 2rem;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .searchBar {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  .searchBar input {
+    width: 80%;
+  }
+
+  .searchBar button {
+    width: 120px;
+    font-size: 1.1rem;
+  }
+}
+
+.no-news-message {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.2rem;
+  color: #555555;
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f4;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.no-news-message {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.head {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.categoryBtn {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.categoryBtn button {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: #333333;
+  border: none;
+  padding: 12px 25px;
+  cursor: pointer;
+  border-radius: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.categoryBtn button:hover {
+  background-color: #f5a623;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.categoryBtn button:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.categoryBtn button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .categoryBtn {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .categoryBtn button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+.content-container {
+  position: relative;
+  background-image: url('https://www.shutterstock.com/image-photo/old-newspaper-background-blank-grunge-600nw-2489922877.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 40px 20px;
+  background-attachment: fixed;
+  margin-top: 40px;
+}
+
+.card-container {
+  position: relative;
+  z-index: 1;
+}
+
+.no-news-message {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.2rem;
+  color: #555555;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    padding: 20px;
+  }
+}
+
+.head {
+  font-size: 3rem;
+  font-weight: bold;
+  color: transparent; 
+  background-image:url('https://wallpapers.com/images/featured/newspaper-aesthetic-background-6zy4tj738voyh9fx.jpg'); 
+  background-size: cover; 
+  background-clip: text; 
+  -webkit-background-clip: text; 
+}
+
+
